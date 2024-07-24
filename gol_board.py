@@ -35,5 +35,8 @@ class Board:
                 self.current_cells[i][j] = 0
                 self.updated_cells[i][j] = 0
 
+    def __cell_in_grid(self, cur_row, cur_col):
+        return 0 <= cur_row < self.max_rows and 0 <= cur_col < self.max_cols
+
     def __repr__(self):
         return f"Board({self.max_rows}, {self.max_cols})"
