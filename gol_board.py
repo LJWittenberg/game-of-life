@@ -68,7 +68,21 @@ class Board:
     public for now
     """
     def enforce_rules(self):
-        pass
+        for i in range(self.max_rows):
+            for j in range(self.max_cols):
+                neighbour_live_cell = self.__count_live_neighbours(i, j)
+            
+                # check if a live cell should stay alive
+                if self.current_cells[i][j] == 1 and (neighbour_live_cell == 2 or neighbour_live_cell == 3):
+                    self.updated_cells[i][j] = 1
+
+                # check if a dead cell should become alive
+                elif self.current_cells[i][j] == 0 and neighbour_live_cell == 3:
+                    self.updated_cells[i][j] = 1
+
+                # if none of the previous conditions apply, the cell should be dead
+                else:
+                    self.updated_cells[i][j] = 0
 
     """
     Function to print out the live cells of the grid to create the Game of Life simulation.
@@ -82,13 +96,25 @@ class Board:
     public for now
     """
     def swap_cell_states(self):
-        pass
+        for i in range(self.max_rows):
+            for j in range(self.max_cols):
+                self.current_cells[i][j] = self.updated_cells[i][j]
+                self.updated_cells[i][j] = 0
 
     """
     Function to varify if any live cells are left withing the game.
     public for now
     """
     def check_dead_life(self):
-        pass
+        dead = 0
+        for i in range(self.max_rows):
+            for j in range(self.max_cols):
+                if self.current_cells[i][j] == 1:
+                    dead = 1
+                    break  # Once a living cell is found, no need to continue checking
+            if dead == 1:
+                break
+        return dead
+
     def __repr__(self):
         return f"Board({self.max_rows}, {self.max_cols})"
