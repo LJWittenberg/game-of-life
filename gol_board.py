@@ -89,7 +89,14 @@ class Board:
     likely replace later with Tkinter representation
     """
     def print_game(self):
-        pass
+        for i in range(self.max_rows):
+            for j in range(self.max_cols):
+                if self.current_cells[i][j] == 1:
+                    print("*", end="")
+                else:
+                    print(" ", end="")
+            print()  # for new line after each row
+        print()  # additional new line after the entire board
 
     """
     transfering the data of updated_cells into current_cells and declaring all cells in updated cells as dead.
