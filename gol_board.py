@@ -35,8 +35,60 @@ class Board:
                 self.current_cells[i][j] = 0
                 self.updated_cells[i][j] = 0
 
+    """
+    Support function to test if a specific cell in inside of the grid.
+    used for the count_live_neighbours function and indirectly for the enforce_rules function.
+    """
     def __cell_in_grid(self, cur_row, cur_col):
         return 0 <= cur_row < self.max_rows and 0 <= cur_col < self.max_cols
+    
+    """
+    Support function that counts all surrounding live neighbours of a inspected cell.
+    @param cur_row and cur_col represent the x and y coordinates of the inspected cell.
+    """
+    def __count_live_neighbours(self, cur_row, cur_col):
+        count = 0
+        for i in range(cur_row - 1, cur_row + 2):
+            for j in range(cur_col - 1, cur_col + 2):
+                proceed_check = self.__cell_in_grid(i,j)
+                if i == cur_row and j == cur_col:
+                    continue
+                if self.__cell_in_grid(i, j) and self.current_cells[i][j] == 1:
+                    count += 1
+        return count
+    
+    def clear_board(self):
+        """Clears the board by setting all cells to None or empty lists."""
+        self.current_cells = None
+        self.updated_cells = None
+        print("Board has been cleared.")
 
+    """
+    Function to apply the rules of Conways game of Life.
+    public for now
+    """
+    def enforce_rules(self):
+        pass
+
+    """
+    Function to print out the live cells of the grid to create the Game of Life simulation.
+    likely replace later with Tkinter representation
+    """
+    def print_game(self):
+        pass
+
+    """
+    transfering the data of updated_cells into current_cells and declaring all cells in updated cells as dead.
+    public for now
+    """
+    def swap_cell_states(self):
+        pass
+
+    """
+    Function to varify if any live cells are left withing the game.
+    public for now
+    """
+    def check_dead_life(self):
+        pass
     def __repr__(self):
         return f"Board({self.max_rows}, {self.max_cols})"
