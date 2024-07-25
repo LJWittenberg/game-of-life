@@ -11,11 +11,15 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
 ## How access and use the project.
 1. **Clone the repository**: `git clone <repository-url>`
 2. **Navigate to the project directory**: `cd <project-directory>`
-3. **Run the program**: Execute `python main.py` in your terminal
-4. **Follow the prompts**: Enter the a series of coordinates for the two dimensional game grid. (x,y) These coordinates will become the first cell generation.
+3. **Open the Coordinates File**:
+4. **Create your first Generation**: Enter the a series of coordinates for the two dimensional game grid. (x,y) These coordinates will become the first cell generation. Example for a coordinates pair:  
+11 0 --> (x/row = 11; y/col = 0)
+6. **Run the program**: Execute `python main.py` with either the coordinates you wrote as argument `coordinates.md` or the preset `presets.md` in your terminal.
+**Example call**: ``python main.py presets.md`
+
 
 ## State of the project
-- rules work in progress
-- unit tests work in progress
+- rules done
+- unit tests done
 - visual representation work in progress
-- handeling and code combination work in progress
+- handeling and code combination done

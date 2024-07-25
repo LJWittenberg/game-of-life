@@ -1,23 +1,39 @@
-#PLACEHOLDER NOT THE FINAL BUILD
-
 import argparse
+import time
+from gol_board import Board
 
-def main():
+def parse_args():
     parser = argparse.ArgumentParser(description="Conway's Game of Life")
     parser.add_argument('input_file', type=str, help='Input file for the initial configuration')
-    parser.add_argument('output_file', type=str, help='Output file to save the final configuration')
-    parser.add_argument('--steps', type=int, default=100, help='Number of steps to simulate')
+    return parser.parse_args()
 
-    args = parser.parse_args()
+def load_initial_configuration(board, input_file):
+    with open(input_file, 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            line = line.strip()
+            if line and not line.startswith('#'):  # Ignore comments
+                row_idx, col_idx = map(int, line.split())
+                board.current_cells[row_idx][col_idx] = 1  # Setting the cell as alive
+
+def main():
+    args = parse_args()
 
     input_file = args.input_file
-    output_file = args.output_file
-    steps = args.steps
+    
+    # Initialize the game board
+    game = Board(40, 210)
 
-    # Call your game functions here, passing these arguments as needed
-    # initialize_grid(input_file)
-    # simulate_game(steps)
-    # save_grid(output_file)
+    # Load initial configuration into the board
+    load_initial_configuration(game, input_file)
+    
+    game_active = True
+    while game_active:
+        game.print_game()
+        time.sleep(1)
+        game.enforce_rules()
+        game.swap_cell_states()
+        game_active = game.check_dead_life()
 
-if __name__ == "__main__":
+if "__main__" == __name__:
     main()
