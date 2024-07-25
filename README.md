@@ -17,6 +17,11 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
 6. **Run the program**: Execute `python main.py` with either the coordinates you wrote as argument `coordinates.md` or the preset `presets.md` in your terminal.
 **Example call**: ``python main.py presets.md`
 
+## Note
+The configurations in `presets.md` may not render properly or behave as expected if your terminal’s dimensions differ from the original design. This project was initially developed and tested for a terminal display of 40x210 characters in full-screen mode.
+
+To ensure optimal performance and correct rendering of patterns, please adjust your terminal’s dimensions to approximately match this size.
+
 
 ## State of the project
 - rules done
