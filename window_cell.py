@@ -10,7 +10,7 @@ class Cell:
     def draw(self):
         if self._win is None:
             return
-        # testing
+        #testing 
         self.alive = True
         color = "white" if self.alive else "black"
         self._win.Draw_square(self._p1.x, self._p1.y, self._p2.x, self._p2.y, color)

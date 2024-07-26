@@ -21,6 +21,9 @@ class Window:
 
     def close(self):
         self.__running = False
+    
+    def start(self):
+        self.__running = True
 
     def Draw_square(self, x1, y1, x2, y2, color="white"):
         self.__canvas.create_rectangle(x1, y1, x2, y2, fill=color, outline=color)
