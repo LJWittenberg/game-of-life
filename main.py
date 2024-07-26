@@ -1,6 +1,7 @@
 import argparse
 import time
 from gol_board import Board
+from window_cell import Cell
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Conway's Game of Life")
@@ -27,13 +28,7 @@ def main():
     # Load initial configuration into the board
     load_initial_configuration(game, input_file)
     
-    game_active = True
-    while game_active:
-        game.print_game()
-        time.sleep(1)
-        game.enforce_rules()
-        game.swap_cell_states()
-        game_active = game.check_dead_life()
+    game.run_game_logic()
 
 if "__main__" == __name__:
     main()

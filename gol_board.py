@@ -1,6 +1,4 @@
 import time       # To replace time.h and parts of unistd.h (sleep function)
-import random     # To replace rand-related functions from stdlib.h
-import os         # For any OS-level operations similar to unistd.h
 
 # String handling and character type checks are built-in:
 # No need to import anything extra for equivalents of ctype.h and string.h
@@ -67,7 +65,7 @@ class Board:
     Function to apply the rules of Conways game of Life.
     public for now
     """
-    def enforce_rules(self):
+    def __enforce_rules(self):
         for i in range(self.max_rows):
             for j in range(self.max_cols):
                 neighbour_live_cell = self.__count_live_neighbours(i, j)
@@ -88,7 +86,7 @@ class Board:
     Function to print out the live cells of the grid to create the Game of Life simulation.
     likely replace later with Tkinter representation
     """
-    def print_game(self):
+    def __print_game(self):
         for i in range(self.max_rows):
             for j in range(self.max_cols):
                 if self.current_cells[i][j] == 1:
@@ -102,7 +100,7 @@ class Board:
     transfering the data of updated_cells into current_cells and declaring all cells in updated cells as dead.
     public for now
     """
-    def swap_cell_states(self):
+    def __swap_cell_states(self):
         for i in range(self.max_rows):
             for j in range(self.max_cols):
                 self.current_cells[i][j] = self.updated_cells[i][j]
@@ -112,7 +110,7 @@ class Board:
     Function to varify if any live cells are left withing the game.
     public for now
     """
-    def check_dead_life(self):
+    def __check_dead_life(self):
         dead = 0
         for i in range(self.max_rows):
             for j in range(self.max_cols):
@@ -122,6 +120,15 @@ class Board:
             if dead == 1:
                 break
         return dead
+    
+    def run_game_logic(self):
+        game_active = True
+        while game_active:
+            self.__print_game()
+            time.sleep(0.5)
+            self.__enforce_rules()
+            self.__swap_cell_states()
+            game_active = self.__check_dead_life()
 
     def __repr__(self):
         return f"Board({self.max_rows}, {self.max_cols})"
