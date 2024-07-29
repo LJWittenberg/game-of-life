@@ -3,6 +3,7 @@ import time
 from gol_board import Board
 from window_cell import Cell
 from graphics import Window
+from game_grid import Grid
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Conway's Game of Life")
@@ -29,20 +30,23 @@ def main():
     max_p_y = 1000
     # 5x5 game = Board(382, 200) work towoards that
     # 4x4 game = Board(477, 250) meh 
-    game = Board(40, 210)
+    # Board(40, 210) for console print only
+    game = Board(382, 200)
     win = Window(max_p_x, max_p_y)
 
     # Load initial configuration into the board
     load_initial_configuration(game, input_file)
 
-    c1 = Cell(0, 0, 5, 5,win)
-    c1.draw()
+    grid = Grid(0, 0, game.max_rows, game.max_cols, 5 ,5 , game, win)
+    """
+    c1 = Cell(win)
+    c1.draw(0, 0, 5, 5)
 
-    c2 = Cell(max_p_x-5, max_p_y-5, max_p_x, max_p_y,win)
-    c2.draw()
-
+    c2 = Cell(win)
+    c2.draw(max_p_x-5, max_p_y-5, max_p_x, max_p_y)
+    """
     win.wait_for_close()
-    game.run_game_logic()    
+    #game.run_game_logic()    
 
 if "__main__" == __name__:
     main()
