@@ -28,6 +28,12 @@ class Window:
     def Draw_square(self, x1, y1, x2, y2, color="white"):
         self.__canvas.create_rectangle(x1, y1, x2, y2, fill=color, outline=color)
 
+    def clear_canvas(self):
+        self.__canvas.delete("all")
+
+    def after(self, ms, func):
+        self.__root.after(ms, func)
+
 class Point:
     def __init__(self, x, y):
         self.x = x

@@ -37,10 +37,7 @@ def main():
     # Load initial configuration into the board
     load_initial_configuration(game, input_file)
 
-    #grid = Grid(0, 0, game.max_rows, game.max_cols, 5 ,5 , game, win)
-
-    game.run_game_logic(0, 0, win, 5, 5)
-    #game.run_game_logic(0, 0, game.max_rows, game.max_cols, 5 ,5 , game, win)   
+    game.run_game_logic(0, 0, win, 5, 5)  
     win.wait_for_close()
      
 

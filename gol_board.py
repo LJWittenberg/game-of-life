@@ -125,26 +125,32 @@ class Board:
     def run_game_logic(self, grid_x1, grid_y1, window, cell_size_x, cell_size_y):
         # Create the Grid using the provided parameters
         grid = Grid(grid_x1, grid_y1, self.max_rows, self.max_cols, cell_size_x, cell_size_y, self, window)
-        gen_check = 0
-    
-        game_active = True
-        while game_active:
-            self.__print_game()
-            #time.sleep(0.5)
-            self.__enforce_rules()
-            self.__swap_cell_states()
+        self.gen_check = 1
+        self.game_active = True
+        self.window = window
 
-            # Update the Grid's cells from the Board
-            self.copy_board_to_grid(grid)
+        def step():
+            if self.game_active:
+                self.__print_game()
+                self.__enforce_rules()
+                self.__swap_cell_states()
+                # Update the Grid's cells from the Board
+                self.copy_board_to_grid(grid)
+                grid.clear_grid()
         
-            # Draw the cells on the grid
-            for i in range(self.max_rows):
-                for j in range(self.max_cols):
-                    grid.grid_call_draw(i, j)
+                # Draw the cells on the grid
+                for i in range(self.max_rows):
+                    for j in range(self.max_cols):
+                        grid.grid_call_draw(i, j)
 
-            #game_active = self.__check_dead_life()
-            print(f"{gen_check}")
-            gen_check += 1
+                self.game_active = self.__check_dead_life()
+                print(f"{self.gen_check}")
+                self.gen_check += 1
+
+                # Schedule the next step
+                self.window.after(500, step)
+        # Start the first step
+        step()
     
     def copy_board_to_grid(self, grid):
         for i in range(self.max_rows):

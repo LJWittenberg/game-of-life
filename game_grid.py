@@ -68,3 +68,6 @@ class Grid:
     
     def grid_call_draw(self, i,j):
         self.__draw_cell(i,j)
+
+    def clear_grid(self):
+        self._win.clear_canvas()
