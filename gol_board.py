@@ -1,4 +1,5 @@
 import time       # To replace time.h and parts of unistd.h (sleep function)
+from game_grid import Grid
 
 # String handling and character type checks are built-in:
 # No need to import anything extra for equivalents of ctype.h and string.h
@@ -120,15 +121,38 @@ class Board:
             if dead == 1:
                 break
         return dead
+
+    def run_game_logic(self, grid_x1, grid_y1, window, cell_size_x, cell_size_y):
+        # Create the Grid using the provided parameters
+        grid = Grid(grid_x1, grid_y1, self.max_rows, self.max_cols, cell_size_x, cell_size_y, self, window)
+        gen_check = 0
     
-    def run_game_logic(self):
         game_active = True
         while game_active:
             self.__print_game()
-            time.sleep(0.5)
+            #time.sleep(0.5)
             self.__enforce_rules()
             self.__swap_cell_states()
-            game_active = self.__check_dead_life()
+
+            # Update the Grid's cells from the Board
+            self.copy_board_to_grid(grid)
+        
+            # Draw the cells on the grid
+            for i in range(self.max_rows):
+                for j in range(self.max_cols):
+                    grid.grid_call_draw(i, j)
+
+            #game_active = self.__check_dead_life()
+            print(f"{gen_check}")
+            gen_check += 1
+    
+    def copy_board_to_grid(self, grid):
+        for i in range(self.max_rows):
+            for j in range(self.max_cols):
+                if self.current_cells[i][j] == 1:
+                    grid._cells[i][j].alive = True
+
+    
 
     def __repr__(self):
         return f"Board({self.max_rows}, {self.max_cols})"

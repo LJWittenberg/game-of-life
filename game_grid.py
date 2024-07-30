@@ -1,6 +1,5 @@
 from window_cell import Cell
 import time
-from gol_board import Board
 
 class Grid:
     def __init__(
@@ -24,21 +23,21 @@ class Grid:
         self._cell_size_x = cell_size_x
         self._cell_size_y = cell_size_y
         self._win = win
-        self._game_board = gol
 
-        self.__create_cells()
+        self.__create_cells(gol)
 
-    def __create_cells(self):
+    def __create_cells(self, board):
         for i in range(self._num_rows):
             row_cells = []
             for i in range(self._num_cols):
                 row_cells.append(Cell(self._win))
             self._cells.append(row_cells)
-        self.__copy_board_to_grid(self._game_board) # placeholder
+        board.copy_board_to_grid(self)
         for i in range(self._num_rows):
             for j in range(self._num_cols):
                 self.__draw_cell(i, j)
 
+    """ prepare to delete
     def __copy_board_to_grid(self, board):
         if self._num_rows != board.max_rows or self._num_cols != board.max_cols:
             raise Exception("miss matching grid sizes!")
@@ -46,6 +45,7 @@ class Grid:
             for j in range(self._num_cols):
                 if board.current_cells[i][j] == 1:
                     self._cells[i][j].alive = True
+    """
 
     def __draw_cell(self, i, j):
         if self._win is None:
@@ -62,3 +62,9 @@ class Grid:
             return
         self._win.redraw()
         #time.sleep(0.05)
+
+    def update_grid_from_board(self):
+        self.__copy_board_to_grid(self._game_board)
+    
+    def grid_call_draw(self, i,j):
+        self.__draw_cell(i,j)

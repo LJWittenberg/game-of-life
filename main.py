@@ -37,16 +37,12 @@ def main():
     # Load initial configuration into the board
     load_initial_configuration(game, input_file)
 
-    grid = Grid(0, 0, game.max_rows, game.max_cols, 5 ,5 , game, win)
-    """
-    c1 = Cell(win)
-    c1.draw(0, 0, 5, 5)
+    #grid = Grid(0, 0, game.max_rows, game.max_cols, 5 ,5 , game, win)
 
-    c2 = Cell(win)
-    c2.draw(max_p_x-5, max_p_y-5, max_p_x, max_p_y)
-    """
+    game.run_game_logic(0, 0, win, 5, 5)
+    #game.run_game_logic(0, 0, game.max_rows, game.max_cols, 5 ,5 , game, win)   
     win.wait_for_close()
-    #game.run_game_logic()    
+     
 
 if "__main__" == __name__:
     main()
