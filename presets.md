@@ -1,11 +1,13 @@
-# x horizontal y vertical
-# 0 0 is the top left corner
-# The grid dimensions are 382x200 --> meaning max x = 381 and max y = 199
-# The preset creates a number of different figures each new figure starts at commented line
-# How to write coordinates: Visualize the game grid as the Third quadrant of a coordinate system. Where the first number you enter is the coordinate of the X axis and the second number the Y axis. for example the first figures would look like this:
-#   **
-#    *
-# Everthing after the first generation is left up to the Game rules. For more Details about possible Figures and what rules are check out the README.md
+# x horizontal, y vertical
+# (0, 0) is the top-left corner
+# Grid dimensions: 382x200 (max x = 381, max y = 199)
+# Coordinates format: x y (e.g., 0 0)
+# First number = X-axis, second number = Y-axis
+# The grid is visualized like the third quadrant of a coordinate system.
+
+# Presets create various figures; each new figure starts at a commented line
+# Figures evolve according to the game rules. For more details, see README.md
+# Users can expand this file or make their own Generation from Scratch in the coordinates.md file
 
 # top left corner still life
 0 0
