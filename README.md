@@ -19,7 +19,11 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
 **Example call**: ``python main.py presets.md`
 
 ## About the project
-# include things like the console print, how a figure would look like, rules etc.
+- In addition to the window and canvas representation the programm also has a console print which is enabled by default. This print is was used to ensure that the Logic and rules of the Game of Life were enforced accordingly. The print now serves as an additional way to represent the cells or as a debugging tool to check if a figure was set correctly.
+- **Example for how a figure would look** The given coordinate pairs: (0,0);(1,0);(1,1) would create the following pattern:
+    **
+     *
+- rules etc.
 
 ## Note
 - Check out the presets.md file before starting. A short explanation how to handle coordinates can be found there.
@@ -27,23 +31,20 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
 
 
 ## State of the project
-- rules done
-- unit tests done
-- visual representation done
-- handeling and code combination done
-- Project base done
-- improvements work in progress.
+- [x] rules
+- [x] unit tests
+- [x] visual representation
+- [x] handeling and code combination 
+- [x] Project base
+- [x] improvements work in progress.
 
 # Creators and Contributers
 - Lennard J.W
 - Bootdev Community 
 
-# Scoures
--
--
--
--
--
--
--
--
+# Scoures and Insparation
+- [Geeks for Geeks](https://www.geeksforgeeks.org/program-for-conways-game-of-life/)
+- [Game of Life Wiki](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+- [Window and Canvas Prototyp-BootDev](https://www.boot.dev/lessons/fb0967e1-a304-4110-8bf3-41071d99af0c)
+- [Play John Conway's Game of Life](https://playgameoflife.com)
+- [Game of Life figure Library](https://conwaylife.appspot.com/library/a)
