@@ -2,8 +2,9 @@ Conway's Game of Life implementation by Lennard Wittenberg in the language Pytho
 =================================================================================
 project task for [Bootdev-course-personal-project-1](https://www.boot.dev/tracks/backend)
 My aim with this project is to complete my first implementation of the Game of Life C. At the time I wasn't able to finish the project in University and had leave in a incomplete state.
-# maybe link to old project on github 
-
+<!---
+ maybe link to old project on github 
+--->
 
 ## What is the Game of Life short explenation 
 This is the describtion by the Cornell University  
@@ -21,9 +22,10 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
 ## About the project
 - In addition to the window and canvas representation the programm also has a console print which is enabled by default. This print is was used to ensure that the Logic and rules of the Game of Life were enforced accordingly. The print now serves as an additional way to represent the cells or as a debugging tool to check if a figure was set correctly.
 - **Example for how a figure would look** The given coordinate pairs: (0,0);(1,0);(1,1) would create the following pattern:
-    **
-     *
+    **                                                                                                                                                                                         *
 - rules etc.
+- presets.md 
+- coordinates.md
 
 ## Note
 - Check out the presets.md file before starting. A short explanation how to handle coordinates can be found there.
