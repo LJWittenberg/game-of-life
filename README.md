@@ -21,8 +21,8 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
 
 ## About the project
 - In addition to the window and canvas representation the programm also has a console print which is enabled by default. This print is was used to ensure that the Logic and rules of the Game of Life were enforced accordingly. The print now serves as an additional way to represent the cells or as a debugging tool to check if a figure was set correctly.
-- **Example for how a figure would look** The given coordinate pairs: (0,0);(1,0);(1,1) would create the following pattern:
-    **                                                                                                                                                                                         *
+- **Example for how a figure would look** The given coordinate pairs: (0,0);(1,0);(1,1);(0,1) would create the `Block` Pattern from the `Figure examples` picture in the top left corner.
+![Figure examples](https://blog.xojo.com/wp-content/uploads/2022/05/CleanShot-2022-05-02-at-14.25.12@2x-1024x924.png)
 - rules etc.
 - presets.md 
 - coordinates.md
@@ -50,3 +50,5 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
 - [Window and Canvas Prototyp-BootDev](https://www.boot.dev/lessons/fb0967e1-a304-4110-8bf3-41071d99af0c)
 - [Play John Conway's Game of Life](https://playgameoflife.com)
 - [Game of Life figure Library](https://conwaylife.appspot.com/library/a)
+- **Pictures**
+- [example figures](https://blog.xojo.com/wp-content/uploads/2022/05/CleanShot-2022-05-02-at-14.25.12@2x-1024x924.png)
