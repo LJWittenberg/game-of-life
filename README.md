@@ -25,15 +25,11 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
     <img src="https://blog.xojo.com/wp-content/uploads/2022/05/CleanShot-2022-05-02-at-14.25.12@2x-1024x924.png" alt="Figure examples" width="500"/>
 - [Game of Life-Rules](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 - **Information about `presets.md` and `coordinates.md`**
-    - **presets.md** The grid is visualized like the third quadrant of a coordinate system. With the dimensions of 382x200. Indevidual Cells in the grid are accessed via a cooridnate pair: x horizontal, y vertical where (0, 0) is the top-left corner (max x = 381, max y = 199)
-<!---# Coordinates format: x y (e.g., 0 0)
-# First number = X-axis, second number = Y-axis
-# The grid is visualized like the third quadrant of a coordinate system.
+    - **presets.md** The grid is visualized like the third quadrant of a coordinate system. With the dimensions of 382x200. Individual cells in the grid are accessed via a cooridnate pair (0 0). First number = X-axis, second number = Y-axis where (0, 0) is the top-left corner (max x = 381, max y = 199)
+        - `Presets.md` create various figures. Each new figure starts at a commented line
+        - Figures evolve according to the game rules. For more details, view the previous point.
+        - Users can expand this file or make their own Generation from Scratch in the `coordinates.md `file
 
-# Presets create various figures; each new figure starts at a commented line
-# Figures evolve according to the game rules. For more details, see README.md
-# Users can expand this file or make their own Generation from Scratch in the coordinates.md file
---->
 
 
 ## State of the project

@@ -1,14 +1,3 @@
-# x horizontal, y vertical
-# (0, 0) is the top-left corner
-# Grid dimensions: 382x200 (max x = 381, max y = 199)
-# Coordinates format: x y (e.g., 0 0)
-# First number = X-axis, second number = Y-axis
-# The grid is visualized like the third quadrant of a coordinate system.
-
-# Presets create various figures; each new figure starts at a commented line
-# Figures evolve according to the game rules. For more details, see README.md
-# Users can expand this file or make their own Generation from Scratch in the coordinates.md file
-
 # top left corner still life
 0 0
 1 0
