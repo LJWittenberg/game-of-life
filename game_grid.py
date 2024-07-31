@@ -37,16 +37,6 @@ class Grid:
             for j in range(self._num_cols):
                 self.__draw_cell(i, j)
 
-    """ prepare to delete
-    def __copy_board_to_grid(self, board):
-        if self._num_rows != board.max_rows or self._num_cols != board.max_cols:
-            raise Exception("miss matching grid sizes!")
-        for i in range(self._num_rows):
-            for j in range(self._num_cols):
-                if board.current_cells[i][j] == 1:
-                    self._cells[i][j].alive = True
-    """
-
     def __draw_cell(self, i, j):
         if self._win is None:
             return
@@ -71,3 +61,8 @@ class Grid:
 
     def clear_grid(self):
         self._win.clear_canvas()
+        for i in range(self._num_rows):
+            for j in range(self._num_cols):
+                self._cells[i][j].alive = False
+
+        #self._cells = [[0 for _ in range(self.cols)] for _ in range(self.rows)]

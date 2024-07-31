@@ -136,7 +136,7 @@ class Board:
                 self.__swap_cell_states()
                 # Update the Grid's cells from the Board
                 self.copy_board_to_grid(grid)
-                grid.clear_grid()
+                
         
                 # Draw the cells on the grid
                 for i in range(self.max_rows):
@@ -144,6 +144,8 @@ class Board:
                         grid.grid_call_draw(i, j)
 
                 self.game_active = self.__check_dead_life()
+                time.sleep(1)
+                grid.clear_grid()
                 print(f"{self.gen_check}")
                 self.gen_check += 1
 
