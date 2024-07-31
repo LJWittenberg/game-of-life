@@ -29,6 +29,10 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
         - `Presets.md` create various figures. Each new figure starts at a commented line
         - Figures evolve according to the game rules. For more details, view the previous point.
         - Users can expand this file or make their own Generation from Scratch in the `coordinates.md `file
+    - **coordinates.md**
+        - This is the file were users can write down and set their own coordinates for the initial generation.
+        - Feel free to copy or ignore the given `presets.md`
+        - *note: every line that isn't a coordinate pair has to start with a "#"*
 
 
 
