@@ -18,13 +18,28 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
 **Example call**: ``python main.py presets.md`
 
 ## Note
-The configurations in `presets.md` may not render properly or behave as expected if your terminal’s dimensions differ from the original design. This project was initially developed and tested for a terminal display of 40x210 characters in full-screen mode.
-
-To ensure optimal performance and correct rendering of patterns, please adjust your terminal’s dimensions to approximately match this size.
+- Check out the presets.md file before starting. A short explanation how to handle coordinates can be found there.
+- When the window is manually closed via the close botton. Then the programm will terminate after the current generation has rendered completly. Therefore it can happen that the window will not instantly close when pressed.
 
 
 ## State of the project
 - rules done
 - unit tests done
-- visual representation work in progress
+- visual representation done
 - handeling and code combination done
+- Project base done
+- improvements work in progress.
+
+# Creators and Contributers
+- Lennard J.W
+- Bootdev Community 
+
+# Scoures
+-
+-
+-
+-
+-
+-
+-
+-

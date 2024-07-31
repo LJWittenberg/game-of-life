@@ -18,6 +18,7 @@ class Board:
         """
         self.max_rows = rows
         self.max_cols = cols
+        self.gen_check = 1
         self.current_cells = [[0 for _ in range(cols)] for _ in range(rows)]
         self.updated_cells = [[0 for _ in range(cols)] for _ in range(rows)]
 
@@ -131,6 +132,7 @@ class Board:
 
         def step():
             if self.game_active:
+                grid.clear_grid()
                 self.__print_game()
                 self.__enforce_rules()
                 self.__swap_cell_states()
@@ -142,15 +144,17 @@ class Board:
                 for i in range(self.max_rows):
                     for j in range(self.max_cols):
                         grid.grid_call_draw(i, j)
+                
 
                 self.game_active = self.__check_dead_life()
-                time.sleep(1)
-                grid.clear_grid()
                 print(f"{self.gen_check}")
                 self.gen_check += 1
 
                 # Schedule the next step
+                time.sleep(1)
                 self.window.after(500, step)
+            else:
+                pass
         # Start the first step
         step()
     

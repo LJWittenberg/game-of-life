@@ -1,24 +1,85 @@
-# Blinker
-30 102
-30 103
-30 104
-30 106
-30 107
-30 108
-# Still life
+# x horizontal y vertical
+# 0 0 is the top left corner
+# The grid dimensions are 382x200 --> meaning max x = 381 and max y = 199
+# The preset creates a number of different figures each new figure starts at commented line
+# How to write coordinates: Visualize the game grid as the Third quadrant of a coordinate system. Where the first number you enter is the coordinate of the X axis and the second number the Y axis. for example the first figures would look like this:
+#   **
+#    *
+# Everthing after the first generation is left up to the Game rules. For more Details about possible Figures and what rules are check out the README.md
+
+# top left corner still life
 0 0
-0 1
+1 0
 1 1
-38 198
-38 199
-39 199
+# top right corner still life
+381 0
+381 1
+380 0
+# bootom right corner still life
+381 198
+381 199
+380 198
+# bottom left corner still life
 0 198
-0 199
+1 198
 1 199
-38 0
-38 1
-39 1
-# Pulsar
+# Blinker slightly below the middle
+185 150
+186 150
+187 150
+189 150
+190 150
+191 150
+# Pulsar in the middle of the screen roughly
+184 146
+185 146
+186 146
+190 146
+191 146
+192 146
+184 141
+185 141
+186 141
+190 141
+191 141
+192 141
+184 139
+185 139
+186 139
+190 139
+191 139
+192 139
+184 134
+185 134
+186 134
+190 134
+191 134
+192 134
+194 144
+194 143
+194 142
+194 138
+194 137
+194 136
+189 144
+189 143
+189 142
+189 138
+189 137
+189 136
+187 144
+187 143
+187 142
+187 138
+187 137
+187 136
+182 144
+182 143
+182 142
+182 138
+182 137
+182 136
+# Pulsar original
 16 99
 17 99
 18 99
@@ -67,39 +128,13 @@
 26 107
 26 108
 26 109
+# Glider
+3 5
+4 6
+5 4
+5 5
+5 6
 # Glider Gun
-5 0
-4 1
-5 1
-5 23
-5 25
-6 25
-0 25
-1 23
-1 25
-2 13
-2 14
-2 21
-2 22
-2 35
-2 36
-3 12
-3 16
-3 21
-3 22
-3 35
-3 36
-4 11
-4 17
-4 21
-4 22
-5 11
-5 15
-5 17
-5 18
-6 11
-6 17
-7 12
-7 16
-8 13
-8 14
+
+
+# G

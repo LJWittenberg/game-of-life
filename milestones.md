@@ -15,15 +15,17 @@
 
 ## Phase 3: Game Functionality
 - [x] Implement game loop to update the grid
-- [ ] Transfer Gol logic onto the canvas
-- [/] Add functionality to start and stop the game
-- [/] Allow users to set initial state interactively
+- [x] Transfer Gol logic onto the canvas
+- [x] Add functionality to start and stop the game
+- [x] Allow users to set initial state interactively
 
 ## Phase 4: Enhancements
-- [-] Add functionalities to load and save game states
-- [ ] Implement random initial configurations
-- [ ] Add performance improvements for larger grids
+- [x] Add functionalities to load
+- [x] Add performance improvements for larger grids
 
 ## Future Improvements
+- [ ] Implement random initial configurations in addition to the initial generation. (Let Chaos ensue)
+- [ ] Improve program cancelation
+- [ ] Improve the O complexity of the game. --> Faster
 - [ ] Implement different visualization options
-- [ ] Add support for different grid sizes and cell densities
+- [ ] improve: Allow users to set initial state interactively

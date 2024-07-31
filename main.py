@@ -21,24 +21,25 @@ def load_initial_configuration(board, input_file):
 
 
 def main():
-    args = parse_args()
+    try:
+        args = parse_args()
 
-    input_file = args.input_file
+        input_file = args.input_file
     
-    # Initialize the game board
-    max_p_x = 1910
-    max_p_y = 1000
-    # 5x5 game = Board(382, 200) work towoards that
-    # 4x4 game = Board(477, 250) meh 
-    # Board(40, 210) for console print only
-    game = Board(382, 200)
-    win = Window(max_p_x, max_p_y)
+        # Initialize the game board
+        max_p_x = 1910
+        max_p_y = 1000
 
-    # Load initial configuration into the board
-    load_initial_configuration(game, input_file)
+        game = Board(382, 200)
+        win = Window(max_p_x, max_p_y)
 
-    game.run_game_logic(0, 0, win, 5, 5)  
-    win.wait_for_close()
+        # Load initial configuration into the board
+        load_initial_configuration(game, input_file)
+
+        game.run_game_logic(0, 0, win, 5, 5)  
+        win.wait_for_close()
+    except KeyboardInterrupt:
+        print(f"\nGame-of-Life stopped at the {game.gen_check} Generation.")
      
 
 if "__main__" == __name__:
