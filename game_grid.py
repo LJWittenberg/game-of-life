@@ -8,7 +8,6 @@ class Grid:
         y1,
         num_rows,
         num_cols,
-        # cell_size
         cell_size_x,
         cell_size_y,
         gol,
@@ -51,7 +50,6 @@ class Grid:
         if self._win is None:
             return
         self._win.redraw()
-        #time.sleep(0.05)
 
     def update_grid_from_board(self):
         self.__copy_board_to_grid(self._game_board)
@@ -64,5 +62,3 @@ class Grid:
         for i in range(self._num_rows):
             for j in range(self._num_cols):
                 self._cells[i][j].alive = False
-
-        #self._cells = [[0 for _ in range(self.cols)] for _ in range(self.rows)]

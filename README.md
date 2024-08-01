@@ -29,6 +29,7 @@ The Game of Life (an example of a cellular automaton ) is played on an infinite 
     - **coordinates.md**
         - This is the file were users can write down and set their own coordinates for the initial generation.
         - Feel free to copy or ignore the given `presets.md`
+        - A Library for a wide variation of figures can be found [here.](https://conwaylife.appspot.com/library/a)
         - *note: every line that isn't a coordinate pair has to start with a "#"*
 
 

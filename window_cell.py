@@ -17,5 +17,5 @@ class Cell:
         self._y1 = y1
         self._y2 = y2
         if self.alive:
-            color = "white" #if self.alive else "black"
+            color = "white"
             self._win.Draw_square(self._x1, self._y1, self._x2, self._y2, color)
