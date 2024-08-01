@@ -2,9 +2,6 @@ Conway's Game of Life implementation by Lennard Wittenberg in the language Pytho
 =================================================================================
 project task for [Bootdev-course-personal-project-1](https://www.boot.dev/tracks/backend)
 My aim with this project is to complete my first implementation of the Game of Life C. At the time I wasn't able to finish the project in University and had leave in a incomplete state.
-<!---
- maybe link to old project on github 
---->
 
 ## What is the Game of Life short explenation 
 This is the describtion by the Cornell University  
